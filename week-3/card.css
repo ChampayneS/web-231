@@ -1,0 +1,23 @@
+/*
+Title: card.css
+Author: Champayne Sylvester
+Date: 12/9/2022
+Description: How to create a Temperature Conversion App
+*/
+#container{
+    padding: 10px;
+}
+
+#form-example{
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+#form-results-example{
+    width: 600px;
+    margin: 3% auto 0;
+}
+#results{
+    size: 28px;
+    text-align: center;
+}
