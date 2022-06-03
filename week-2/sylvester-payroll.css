@@ -1,0 +1,35 @@
+/*
+============================================
+; Title: Assignment 2.3
+; Author: Champayne Sylvester
+; Date: 06/03/2022
+; Description: CSS stylesheet for payroll.html.
+;===========================================
+*/ 
+
+/** style for payroll header */
+
+h1 {
+
+    text-align: center;
+    font-family: 'Oswald', Verdana, Arial, sans-serif;
+    background-color: #3C275A;
+    color:white;
+
+}
+
+/** style for payroll Employee's records */
+
+h3 {
+  font-family: 'Oswald', Verdana, Arial, sans-serif;
+  background-color: #3C275A;
+  color: white;
+  padding: 10px;
+
+
+}
+
+/** style for payroll unordered lists */
+ul {
+    border:1px dotted red;
+}
