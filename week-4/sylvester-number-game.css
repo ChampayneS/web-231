@@ -1,0 +1,38 @@
+/*
+============================================
+; Title: Assignment 4.2
+; Author: Champayne Sylvester
+; Date: 17 June 2022
+; Description: CSS document for number guessing game
+;===========================================
+*/
+
+body{
+   
+    font-family: 'Oswald', Verdana, arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+#container{
+    padding: 10px;
+}
+
+#form-example{
+    width: 600px;
+    margin: 3% auto 0;
+}
+
+#form-results-example{
+    width: 600px;
+    margin: 3% auto 0;
+}
+#results{
+    size: 28px;
+    text-align: center;
+}
+#return-button{
+    padding-left: 28%;
+
+}
