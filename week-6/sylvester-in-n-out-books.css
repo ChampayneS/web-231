@@ -1,0 +1,64 @@
+/*
+============================================
+; Title: Assignment 6.2
+; Author: Champayne Sylvester
+; Date: 1 July 2022
+; Description: CSS stylesheet for In-N-Out-Books.html.
+;===========================================
+*/ 
+
+/*** page styling */
+body{
+   
+    font-family: 'Oswald', Verdana, arial, sans-serif;
+}
+
+/*** header alignment */
+.app-header{
+    text-align: center;
+}
+
+/*** card position styling */
+.card{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*** card styling */
+.card-content{
+    padding: 2px 16px;
+}
+
+/*** table styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/*** table header styling */
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: white;
+    background-color: #4F3674;
+}
+
+/*** settings for table and header */
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/*** hover settings for table */
+tr:hover {
+    background: #d6a800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+/*** return to landing page */
+.return-button{
+    margin-left: 28%;
+}

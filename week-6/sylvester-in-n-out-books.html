@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+============================================
+Title: Assignment 6.2
+Author: Champayne Sylvester
+Date: 1 July 2022↩
+Description: In-N-Out Books application.
+===========================================
+-->
+
+<!--Header-->
+<head>
+    <!--Information for browser-->
+    <meta charset="UTF-8">
+    <title> WEB 231 - Enterprise JavaScript I </title>
+
+    <!--links to stylesheets & Google font Oswald-->
+    
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link rel="stylesheet" type="text/css" href="sylvester-in-n-out-books.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+    <!--Body-->
+<body>
+    
+       <!--Container for Choosing listing-->
+
+         <div id="container">
+             <h1 class="app-header">Welcome to In-N-Out-Books</h1>
+         <div class="card">
+           <div class="card-title">My Favorites</div>
+           <div class="form">
+            <div class="form-field">
+          <label for="listing">Choose a listing</label>
+       <select id="favoriteList" class="drop-down-menu">
+         <option class="option" value= "select">--Select--</option>
+          <option class="option" value="books">Top 3 Favorite Books</option>
+          <option class="option" value="authors">Top 3 Favorite Authors</option>
+            </select>
+             </div>
+
+ <!--Button to Display Listing-->
+
+            <div class="form-field">
+                <button class="btn btn-primary full-width" id="btnDisplayListing">Display Listing</button>
+            </div>
+
+        </div>
+    </div>    
+
+           <!--Creates form for Top 3 Favorite Books ISBN, Title, and Pages-->
+
+<div class="card" id="favBooks">
+   <div class="card-title">Top 3 Favorite Books</div>               
+       <div id="card-content">
+        <table class="table">
+            <tr>
+                <th>ISBN</th>
+                <th>Title</th>
+                <th>Pages</th>
+            </tr>
+        
+            <tbody>
+                <tr>
+                    <td id="txtMrMercedesISBN"></td>
+                    <td id="txtMrMercedesTitle"></td>
+                    <td id="txtMrMercedesPages"></td>
+                </tr>
+                <tr>
+                    <td id="txtTheColdestWinterEverISBN"></td>
+                    <td id="txtTheColdestWinterEverTitle"></td>
+                    <td id="txtTheColdestWinterEverPages"></td>   
+                </tr>
+                <tr>
+                    <td id="txtBelovedISBN"></td>
+                    <td id="txtBelovedTitle"></td>
+                    <td id="txtBelovedPages"></td>
+                </tr>
+            </tbody>
+        </table>
+       </div>              
+   </div> 
+</div>
+
+ <!--Creates form for Top 3 Favorite Authors Name and Genre-->
+
+ <div class="card" id="favAuthors">
+    <div class="card-title">Top 3 Favorite Authors</div>               
+        <div class="card-content">
+         <table class="table">
+             <tr>
+                 <th>Name</th>
+                 <th>Genre</th>
+             </tr>
+         
+             <tbody>
+                 <tr>
+                     <td id="txtStephenKingName"></td>
+                     <td id="txtStephenKingGenre"></td>
+                 </tr>
+                 <tr>
+                     <td id="txtSisterSouljahName"></td>
+                     <td id="txtSisterSouljahGenre"></td>   
+                 </tr>
+                 <tr>
+                     <td id="txtToniMorrisonName"></td>
+                     <td id="txtToniMorrisonGenre"></td>
+                 </tr>
+             </tbody>
+         </table>
+        </div>              
+    </div> 
+
+
+
+ <!--JavaScript Conversion to reveal Books and Authors-->
+
+<script>
+//onclick function for button submission
+
+document.getElementById("btnDisplayListing").onclick = function() {myFunction()};
+
+//declaration for favorite books and favorite authors
+
+let books = document.getElementById("favBooks");
+document.getElementById("favBooks").style.display = "none";
+
+let authors = document.getElementById("favAuthors");
+document.getElementById("favAuthors").style.display = "none";
+
+//if else if statement to display proper results with selection
+function myFunction() {
+    let choice = document.getElementById("favoriteList").value;
+    if (choice == "books") {
+    books.style.display = "block";
+    authors.style.display = "none";
+
+  } else if (choice == "authors") {
+    authors.style.display = "block";
+    books.style.display = "none";
+
+  } else {
+    authors.style.display = "none";
+    books.style.display = "none";
+  }
+};
+
+//JSON setup for favorite books and authors details
+
+//favorite Books with IBSN, Title, & Pages
+const bookMercedes = {
+    isbn: "9781476754451",
+    title: "MR. MERCEDES",
+    pages: "448",
+  }
+
+  const bookWinter = {
+    isbn: "9781439119976",
+    title: "The Coldest Winter Ever",
+    pages: "544",
+  }
+
+  const bookBeloved = {
+    isbn: "9780307388629",
+    title: "Beloved",
+    pages: "352",
+  }
+//favorite Authors with name and genre 
+  const authorStephen = {
+    name: "Stephen King",
+    genre: "Mystery, Horror, & More",
+  }
+
+  const authorSister = {
+    name: "Sister Souljah",
+    genre: "Urban Fiction",
+  }
+
+  const authorToni = {
+    name: "Toni Morrison",
+    genre: "American Literature",
+  };
+
+// anchoring all json object literals to the html tables for Top 3 Books
+document.getElementById("txtMrMercedesISBN").innerHTML = bookMercedes.isbn;
+
+document.getElementById("txtMrMercedesTitle").innerHTML = bookMercedes.title;
+
+document.getElementById("txtMrMercedesPages").innerHTML = bookMercedes.pages;
+
+
+document.getElementById("txtTheColdestWinterEverISBN").innerHTML = bookWinter.isbn;
+
+document.getElementById("txtTheColdestWinterEverTitle").innerHTML = bookWinter.title;
+
+document.getElementById("txtTheColdestWinterEverPages").innerHTML = bookWinter.pages;
+
+
+document.getElementById("txtBelovedISBN").innerHTML = bookBeloved.isbn;
+
+document.getElementById("txtBelovedTitle").innerHTML = bookBeloved.title;
+
+document.getElementById("txtBelovedPages").innerHTML = bookBeloved.pages;
+
+//anchoring all json object literals to the html table for Top 3 Authors 
+document.getElementById("txtStephenKingName").innerHTML = authorStephen.name;
+
+document.getElementById("txtStephenKingGenre").innerHTML = authorStephen.genre;
+
+
+document.getElementById("txtSisterSouljahName").innerHTML = authorSister.name;
+
+document.getElementById("txtSisterSouljahGenre").innerHTML = authorSister.genre;
+
+
+document.getElementById("txtToniMorrisonName").innerHTML = authorToni.name;
+
+document.getElementById("txtToniMorrisonGenre").innerHTML = authorToni.genre;
+
+
+</script>
+
+
+<!--Return Link-->
+<div id="return-button">
+    <a class="return-home" target="_blank" href="../index.html">Return</a>
+    </div>
+</body>
+</html>
