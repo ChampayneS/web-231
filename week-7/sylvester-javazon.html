@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+============================================
+Title: Assignment 7.2
+Author: Champayne Sylvester
+Date: 6 July 2022↩
+Description: Javazon application.
+===========================================
+-->
+
+<!--Header-->
+<head>
+    <!--Information for browser-->
+    <meta charset="UTF-8">
+    <title> WEB 231 - Enterprise JavaScript I </title>
+
+    <!--links to stylesheets & Google font Oswald-->
+    
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link rel="stylesheet" type="text/css" href="sylvester-javazon.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+    <!--Body-->
+<body>
+    
+       <!--Container for Choosing listing-->
+
+         <div id="container">
+             <h1 class="app-header">Welcome to the Javazon App!</h1>
+         <div class="card">
+           <div class="card-title">Javazon Selection Form</div>
+           <div class="form">
+            <div class="form-field">
+          <label for="listing">Choose a listing</label>
+       <select id="listing" class="drop-down-menu">
+         <option class="option" value= "select">--Select--</option>
+          <option class="option" value="products">Javazon Products</option>
+          <option class="option" value="services">Javazon Services</option>
+          <option class="option" value="employees">Javazon Employees</option>
+            </select>
+             </div>
+
+ <!--Button to Display Listing-->
+
+            <div class="form-field">
+                <button class="btn btn-primary full-width" id="btnDisplayListing">Display Listing</button>
+            </div>
+
+        </div>
+    </div>    
+
+    <!--Return Link-->
+<div id="return-button">
+    <a class="return-home" target="_blank" href="../index.html">Return</a>
+</div>
+
+           <!--Creates form for Javazon Products-->
+
+<div class="card" id="javazonProducts">
+   <div class="card-title">Javazon Products</div>               
+       <div id="card-content">
+        <table class="table">
+            <tr>
+                <th>Product ID</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Value</th>
+            </tr>
+        
+            <tbody>
+                <tr>
+                    <td id="txtHtmlAndCssProductID"></td>
+                    <td id="txtHtmlAndCssDescription"></td>
+                    <td id="txtHtmlAndCssPrice"></td>
+                    <td id="txtHtmlAndCssQuantity"></td>
+                    <td id="txtHtmlAndCssTotalValue"></td>
+                </tr>
+                <tr>
+                    <td id="txtJavaScriptProductID"></td>
+                    <td id="txtJavaScriptDescription"></td>
+                    <td id="txtJavaScriptPrice"></td>
+                    <td id="txtJavaScriptQuantity"></td>
+                    <td id="txtJavaScriptTotalValue"></td>  
+                </tr>
+                <tr>
+                    <td id="txtLearningJavaScriptProductID"></td>
+                    <td id="txtLearningJavaScriptDescription"></td>
+                    <td id="txtLearningJavaScriptPrice"></td>
+                    <td id="txtLearningJavaScriptQuantity"></td>
+                    <td id="txtLearningJavaScriptTotalValue"></td>
+                </tr>
+                <tr>
+                    <td id="txtExpressInActionProductID"></td>
+                    <td id="txtExpressInActionDescription"></td>
+                    <td id="txtExpressInActionPrice"></td>
+                    <td id="txtExpressInActionQuantity"></td>
+                    <td id="txtExpressInActionTotalValue"></td>  
+                </tr>
+                <tr>
+                    <td id="txtMongoDBProductID"></td>
+                    <td id="txtMongoDBDescription"></td>
+                    <td id="txtMongoDBPrice"></td>
+                    <td id="txtMongoDBQuantity"></td>
+                    <td id="txtMongoDBTotalValue"></td>
+                </tr>
+            </tbody>
+        </table>
+       </div>              
+   </div> 
+</div>
+
+ <!--Creates form for Javazon Services-->
+
+ <div class="card" id="javazonServices">
+    <div class="card-title">Javazon Services</div>               
+        <div class="card-content">
+         <table class="table">
+             <tr>
+                 <th>Service ID</th>
+                 <th>Description</th>
+                 <th>Hourly Rate</th>
+                <th>Minimum Billable Hours</th>
+             </tr>
+         
+             <tbody>
+                 <tr>
+                    <td id="txtWebsiteDesignServiceID"></td>
+                    <td id="txtWebsiteDesignServiceDescription"></td>
+                    <td id="txtWebsiteDesignServiceHourlyRate"></td>
+                    <td id="txtWebsiteDesignServiceMBH"></td>
+                 </tr>
+                 <tr>
+                    <td id="txtDevOpsConsultingServiceID"></td>
+                    <td id="txtDevOpsConsultingDescription"></td>
+                    <td id="txtDevOpsConsultingHourlyRate"></td>
+                    <td id="txtDevOpsConsultingMBH"></td>
+                 </tr>
+                 <tr>
+                    <td id="txtDatabaseDesignServiceID"></td>
+                    <td id="txtDatabaseDesignDescription"></td>
+                    <td id="txtDatabaseDesignHourlyRate"></td>
+                    <td id="txtDatabaseDesignMBH"></td>
+                 </tr>
+             </tbody>
+         </table>
+        </div>              
+    </div> 
+
+    <!--Creates form for Javazon Employees-->
+
+    <div class="card" id="javazonEmployees">
+        <div class="card-title">Javazon Employees</div>               
+            <div class="card-content">
+             <table class="table">
+                 <tr>
+                     <th>Employee ID</th>
+                     <th>Last Name</th>
+                     <th>First Name</th>
+                     <th>Salary</th>
+                 </tr>
+             
+                 <tbody>
+                     <tr>
+                        <td id="txtBeethovenLudwigEmployeeID"></td>
+                        <td id="txtBeethovenLudwigLastName"></td>
+                        <td id="txtBeethovenLudwigFirstName"></td>
+                        <td id="txtBeethovenLudwigSalary"></td>
+                     </tr>
+                     <tr>
+                        <td id="txtBachJohannEmployeeID"></td>
+                        <td id="txtBachJohannLastName"></td>
+                        <td id="txtBachJohannFirstName"></td>
+                        <td id="txtBachJohannSalary"></td>
+                     </tr>
+                     <tr>
+                        <td id="txtMozartWolfgangEmployeeID"></td>
+                        <td id="txtMozartWolfgangLastName"></td>
+                        <td id="txtMozartWolfgangFirstName"></td>
+                        <td id="txtMozartWolfgangSalary"></td>
+                     </tr>
+                     <tr>
+                        <td id="txtBrahmsJohannesEmployeeID"></td>
+                        <td id="txtBrahmsJohannesLastName"></td>
+                        <td id="txtBrahmsJohannesFirstName"></td>
+                        <td id="txtBrahmsJohannesSalary"></td>
+                     </tr>
+                     <tr>
+                        <td id="txtHaydnJosephEmployeeID"></td>
+                        <td id="txtHaydnJosephLastName"></td>
+                        <td id="txtHaydnJosephFirstName"></td>
+                        <td id="txtHaydnJosephSalary"></td>
+                     </tr>
+                 </tbody>
+             </table>
+            </div>              
+        </div> 
+
+ <!--JavaScript Conversion to reveal Javazon Products, Services, and Employees-->
+
+<script>
+//onclick function for button submission
+
+document.getElementById("btnDisplayListing").onclick = function() {myFunction()};
+
+//declaration for Javazon Products, Services, and Employees
+
+let products = document.getElementById("javazonProducts");
+document.getElementById("javazonProducts").style.display = "none";
+
+let services = document.getElementById("javazonServices");
+document.getElementById("javazonServices").style.display = "none";
+
+let employees = document.getElementById("javazonEmployees");
+document.getElementById("javazonEmployees").style.display = "none";
+
+//if else if statement to display proper results with selection
+function myFunction()
+ {
+    let choice = document.getElementById("listing").value;
+
+    if (choice == "products") {
+    products.style.display = "block";
+    services.style.display = "none";
+    employees.style.display = "none";
+
+  } else if (choice == "services") {
+    products.style.display = "none";
+    services.style.display = "block";
+    employees.style.display = "none";
+
+  } else if (choice == "employees") {
+    products.style.display = "none";
+    services.style.display = "none";
+    employees.style.display = "block";
+
+  } else {
+    products.style.display = "none";
+    services.style.display = "none";
+    employees.style.display = "none";
+  }
+};
+
+// Javazon Product class
+
+class Product {
+    constructor(id, description, price, quantity) {
+        this.id = id;
+        this.description = description;
+        this.price = price;
+        this.quantity = quantity;
+        this.totalValue = price * quantity;
+    }
+};
+
+// Javazon Service class
+
+class Services {
+           constructor(id, description, hourlyRate, min) {
+                this.id = id;
+                this.description = description;
+                this.hourlyRate = hourlyRate;
+                this.min = min;
+            }
+};
+
+// Javazon Employee class
+
+class Employees {
+            constructor(id, firstName, lastName, salary) {
+                this.id = id;
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.salary = salary;
+            }
+};
+
+// anchoring all Products to the html tables for Javazon Products
+
+
+//HTML and CSS product for Javazon Product
+const productsHtml = new Product (9781118008188, "HTML and CSS: Design and Build Websites", 22.26, 10);
+
+document.getElementById("txtHtmlAndCssProductID").innerHTML = productsHtml.id;
+document.getElementById("txtHtmlAndCssDescription").innerHTML = productsHtml.description;
+document.getElementById("txtHtmlAndCssPrice").innerHTML = productsHtml.price;
+document.getElementById("txtHtmlAndCssQuantity").innerHTML = productsHtml.quantity;
+document.getElementById("txtHtmlAndCssTotalValue").innerHTML = productsHtml.totalValue.toFixed(2);
+
+//Javascript product for Javazon Product
+const productsJavaScript = new Product (9781491952023, "JavaScript: The Definitive Guide 7/E", 41.33, 7);
+
+document.getElementById("txtJavaScriptProductID").innerHTML = productsJavaScript.id;
+document.getElementById("txtJavaScriptDescription").innerHTML = productsJavaScript.description;
+document.getElementById("txtJavaScriptPrice").innerHTML = productsJavaScript.price;
+document.getElementById("txtJavaScriptQuantity").innerHTML = productsJavaScript.quantity;
+document.getElementById("txtJavaScriptTotalValue").innerHTML = productsJavaScript.totalValue.toFixed(2);
+
+//Learning JavaScript product for Javazon Product
+const productsLearning = new Product (9781449331818, "Learning JavaScript Design Patterns 1/E", 25.99, 3);
+
+document.getElementById("txtLearningJavaScriptProductID").innerHTML = productsLearning.id;
+document.getElementById("txtLearningJavaScriptDescription").innerHTML = productsLearning.description;
+document.getElementById("txtLearningJavaScriptPrice").innerHTML = productsLearning.price;
+document.getElementById("txtLearningJavaScriptQuantity").innerHTML = productsLearning.quantity;
+document.getElementById("txtLearningJavaScriptTotalValue").innerHTML = productsLearning.totalValue.toFixed(2);
+
+//Express product for Javazon Product
+const productsExpress = new Product (9781617292422, "Express in Action: Writing, building, and testing Node.js applications 1/E", 34.91, 3);
+
+document.getElementById("txtExpressInActionProductID").innerHTML = productsExpress.id;
+document.getElementById("txtExpressInActionDescription").innerHTML = productsExpress.description;
+document.getElementById("txtExpressInActionPrice").innerHTML = productsExpress.price;
+document.getElementById("txtExpressInActionQuantity").innerHTML = productsExpress.quantity;
+document.getElementById("txtExpressInActionTotalValue").innerHTML = productsExpress.totalValue.toFixed(2);
+
+//MongoDB product for Javazon Product
+const productsMongoDB = new Product (9781491954461, "MongoDB The Definitive Guide", 33.7, 8);
+
+document.getElementById("txtMongoDBProductID").innerHTML = productsMongoDB.id;
+document.getElementById("txtMongoDBDescription").innerHTML = productsMongoDB.description;
+document.getElementById("txtMongoDBPrice").innerHTML = productsMongoDB.price.toFixed(2);
+document.getElementById("txtMongoDBQuantity").innerHTML = productsMongoDB.quantity;
+document.getElementById("txtMongoDBTotalValue").innerHTML = productsMongoDB.totalValue.toFixed(2);
+
+//anchoring all Services to the html table for Javazon Services 
+
+
+//Website Design services for Javazon Services
+
+const servicesWebsite = new Services (100, "Website Design", 150, 25);
+
+document.getElementById("txtWebsiteDesignServiceID").innerHTML = servicesWebsite.id;
+document.getElementById("txtWebsiteDesignServiceDescription").innerHTML = servicesWebsite.description;
+document.getElementById("txtWebsiteDesignServiceHourlyRate").innerHTML = servicesWebsite.hourlyRate.toFixed(2);
+document.getElementById("txtWebsiteDesignServiceMBH").innerHTML = servicesWebsite.min;
+
+//DevOps service for Javazon Services
+
+const servicesDevOps = new Services (101, "DevOps Consulting", 125, 50);
+
+document.getElementById("txtDevOpsConsultingServiceID").innerHTML = servicesDevOps.id;
+document.getElementById("txtDevOpsConsultingDescription").innerHTML = servicesDevOps.description;
+document.getElementById("txtDevOpsConsultingHourlyRate").innerHTML = servicesDevOps.hourlyRate.toFixed(2);
+document.getElementById("txtDevOpsConsultingMBH").innerHTML = servicesDevOps.min;
+
+//Database service for Javazon Services
+
+const servicesDatabase = new Services (102, "Database Design", 125, 15);
+
+document.getElementById("txtDatabaseDesignServiceID").innerHTML = servicesDatabase.id;
+document.getElementById("txtDatabaseDesignDescription").innerHTML = servicesDatabase.description;
+document.getElementById("txtDatabaseDesignHourlyRate").innerHTML = servicesDatabase.hourlyRate.toFixed(2);
+document.getElementById("txtDatabaseDesignMBH").innerHTML = servicesDatabase.min;
+
+//anchoring all Employees to the html table for Javazon Employees 
+
+//Beethoven for Javazon Employee
+const employeeBeethoven = new Employees (1007, "Ludwig", "Beethoven", 13.99);
+
+document.getElementById("txtBeethovenLudwigEmployeeID").innerHTML = employeeBeethoven.id;
+document.getElementById("txtBeethovenLudwigLastName").innerHTML = employeeBeethoven.lastName;
+document.getElementById("txtBeethovenLudwigFirstName").innerHTML = employeeBeethoven.firstName;
+document.getElementById("txtBeethovenLudwigSalary").innerHTML = employeeBeethoven.salary.toFixed(2);
+
+//Bach for Javazon Employee
+const employeeBach = new Employees (1008, "Johann", "Bach", 22.30);
+
+document.getElementById("txtBachJohannEmployeeID").innerHTML = employeeBach.id;
+document.getElementById("txtBachJohannLastName").innerHTML = employeeBach.lastName;
+document.getElementById("txtBachJohannFirstName").innerHTML = employeeBach.firstName;
+document.getElementById("txtBachJohannSalary").innerHTML = employeeBach.salary.toFixed(2);
+
+//Mozart for Javazon Employee
+const employeeMozart = new Employees (1009, "Wolfgang", "Mozart", 19.50);
+
+document.getElementById("txtMozartWolfgangEmployeeID").innerHTML = employeeMozart.id;
+document.getElementById("txtMozartWolfgangLastName").innerHTML = employeeMozart.lastName;
+document.getElementById("txtMozartWolfgangFirstName").innerHTML = employeeMozart.firstName;
+document.getElementById("txtMozartWolfgangSalary").innerHTML = employeeMozart.salary.toFixed(2);
+
+//Brahms for Javazon Employee
+const employeeBrahms = new Employees (1010, "Johannes", "Brahms", 12);
+
+document.getElementById("txtBrahmsJohannesEmployeeID").innerHTML = employeeBrahms.id;
+document.getElementById("txtBrahmsJohannesLastName").innerHTML = employeeBrahms.lastName;
+document.getElementById("txtBrahmsJohannesFirstName").innerHTML = employeeBrahms.firstName;
+document.getElementById("txtBrahmsJohannesSalary").innerHTML = employeeBrahms.salary.toFixed(2);
+
+//Haydn for Javazon Employee
+const employeeHaydn = new Employees (1011, "Joseph", "Haydn", 32.50);
+
+document.getElementById("txtHaydnJosephEmployeeID").innerHTML = employeeHaydn.id;
+document.getElementById("txtHaydnJosephLastName").innerHTML = employeeHaydn.lastName;
+document.getElementById("txtHaydnJosephFirstName").innerHTML = employeeHaydn.firstName;
+document.getElementById("txtHaydnJosephSalary").innerHTML = employeeHaydn.salary.toFixed(2);
+
+</script>
+
+<!--
+Return Link
+<div id="return-button">
+    <a class="return-home" target="_blank" href="../index.html">Return</a>
+    </div>
+-->
+</body>
+</html>
