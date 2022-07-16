@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+============================================
+Title: Assignment 7.2
+Author: Champayne Sylvester
+Date: 16 July 2022↩
+Description: Alphabet game application.
+===========================================
+-->
+
+<!--Header-->
+<head>
+    <!--Information for browser-->
+    <meta charset="UTF-8">
+    <title> WEB 231 - Enterprise JavaScript I </title>
+
+    <!--links to stylesheets & Google font Oswald-->
+    
+    <link rel="stylesheet" type="text/css" href="../global.css" />
+    <link rel="stylesheet" type="text/css" href="sylvester-alphabet-game.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+    <!--Body-->
+<body>
+
+    <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+	    <div id="container">
+         <div class="card">
+          <div class="card-title">Alphabet Number Form</div>
+           <div class="form">
+             <div class="form-field">
+                <label>Alphabet Letter Position</label>
+                <input type="text" id="txtPosition" class="input">                  
+                  </div>
+
+                     <!--Button-->
+                   <div class="form-field">
+                <button id="btnFindLetter" class="btn btn-primary full-width" onclick="findLetter()">Find Letter</button>
+			       </div>
+			       </div>
+             </div>
+           </div>
+
+          <!--Return Link-->
+       <a class="return-home" target="_blank" href="../../index.html">Return</a> 
+      
+
+        <!-- alphabet container-->
+         <div id="alphabet-container">
+          <div class="card">
+             <div class="card-title">Letters in the Alphabet</div>
+              <div class="card-content" id="alphabet"></div>
+                </div>
+                 </div>
+
+       <!--results-->
+             <div id="results-container">
+          <div class="card">
+         <div class="card-title">Results</div>
+       <div class="card-content" id="letter"></div>
+      </div>
+     <br>
+    </div>
+
+<script>
+
+ //alphabet Array 
+ const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+ ];
+
+ // empty loop
+ let alphabetOutput = "";
+
+ //for loop
+ for (i in alphabet) {
+ alphabetOutput += alphabet[i] + ', ';
+ }
+
+ // Remove 2 spaces
+ document.getElementById('alphabet').innerHTML = alphabetOutput.slice(0, -2);
+
+ // Searches for letter
+ function findLetter() {
+
+ // Takes value binds to variable
+let pos = document.getElementById('txtPosition').value;
+
+//Starts array at 1 instead of 0
+let letter = alphabet[pos - 1]; 
+
+//input field undefined, display message
+if (letter === undefined) {
+document.getElementById('results-container').style.display = "block";
+document.getElementById('letter').innerHTML = `There are not ${pos} letters in the alphabet`;
+} else {
+
+//number input less than 27 > 0, display message
+document.getElementById('results-container').style.display = "block";
+document.getElementById('letter').innerHTML = `${letter} is at position ${pos} in the alphabet`;
+ }
+ }
+ 
+ </script>
+</body>
+</html>
